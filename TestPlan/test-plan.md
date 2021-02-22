@@ -4,7 +4,8 @@ The test plan imitates the user study in `NaviField`, however, our experiment an
 ## User Study Design
 We here will exam two methods, specifically **Lattice Crushing** and **ChoiField**, and it use homogeneous scaling as the baseline. The experiment will have two perspective:
 * Compare with each other to figure out the advantages and their disadvantages
-* Compare each of them against homogeneous scaling to identify the metrics
+* Compare each of them against homogeneous scaling as the metrics
+* Possibly integrate `NaviField` implementation in the framework
 
 ## Test Environment & Task
 The environment should be similar to the `NaviField` one as the following figure suggested: 
