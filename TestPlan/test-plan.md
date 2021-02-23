@@ -17,6 +17,8 @@ The image demonstrate a regular hexagon position for 6 flags. The bot will start
 
 Figure 1 shows a five flag case of the bot moving path. The number on the dashed line shows the possible moving routes (1-4 in our case); Figure 2 shows a detail scaled-in image where it is applied to the our two navigation techniques. The point M here is a random point in the technique area (No need to be at centre), to see the outcome of the virtual path.
 
+We will also consider about the actual movement of a human user, i.e. human will have an initial speed and acceaccelerate to some certian speed, and they will gradually decrease the speed to zero when they reach the flag.
+
 ## Experimental Design
 As stated in the first section, we compared the two navigation methods (NEW)s to the homogenenous scaling(BASE). We have 3 sets of factors:
 * Test condition (T): NEW vs. BASE.
@@ -27,7 +29,7 @@ N.B. We do not need the natral walking since the computer simulator program cann
 
 ## Metrics
 The following variable are recorded by the test script:
-* Angle difference `T_AD`: The angle difference on each bot moving frame
+* Angle error `T_AD`: The absolute angle difference between the virual and the actual direction on each bot moving frame.
 * Scaling factor `T_SF`: The scaling factor on each bot moving frame
 * Task completion time `T_TCT`: The time since the paticipants arrived to the first flag until they reached the final flag.
 * Real distance travelled `T_RD`: The distance bot travelled in the real world
