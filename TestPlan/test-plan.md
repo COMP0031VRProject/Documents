@@ -2,7 +2,7 @@
 The test plan imitates the user study in `NaviField`, however, our experiment and paper invastigation will only focusing on navigation scaling without considering visual perspective. The test plan will cover the **Travelling Task** and its metrics.
 
 ## User Study Design
-We here will exam two methods, specifically **Lattice Crushing** and **ChoiField**, and it use homogeneous scaling as the baseline. The experiment will have two perspective:
+We here will exam two methods, specifically **Lattice Crushing** and **Pressure Ring**, and it use homogeneous scaling as the baseline. The experiment will have two perspective:
 * Compare with each other to figure out the advantages and their disadvantages
 * Compare each of them against homogeneous scaling as the metrics
 * Possibly integrate `NaviField` implementation in the framework
@@ -35,3 +35,16 @@ The following variable are recorded by the test script:
 * Real distance travelled `T_RD`: The distance bot travelled in the real world
 * Deviation `T_D`: Ratio between length of the virtual trajectory followed divided by the optimum path length (straight line)
 
+## Acutal Implementation
+The task allocation can be devided into two parts: *Mesh Generation* and *Test Environment*
+* **Mathematica Team**:
+    * Theory of two method, reasonable language desctiption
+    * Generate Mesh for real and virtual
+* **Unity Team**:
+    * Implement a test environment as above mentioned
+    * Only need to able to load the meshes, do not need to implement the actual method
+    * Capture the metrics
+
+<div style="text-align:center">
+    <img src="./assets/test_implementation.png" height="300" />
+</div>
