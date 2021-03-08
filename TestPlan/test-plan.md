@@ -22,11 +22,37 @@ We will also consider about the actual movement of a human user, i.e. human will
 ## Experimental Design
 As stated in the first section, we compared the two navigation methods (NEW)s to the homogenenous scaling(BASE). We have 3 sets of factors:
 * Test condition (T): NEW vs. BASE.
-* Scaling factors (S): 2, 4, 8
+* Scaling factors (S): 2 
 * travelling path (L): 3, 5 -> Number of flag the bot should reach, within the same distances
 
 N.B. We do not need the natral walking since the computer simulator program cannot have deviations to the real walking scenario.
 
+## Mesh Design & Format
+It is stored in `JSON` format for simplicity, since we have the clone of the `python` framework in Unity already, it would be good we just dump and transform the data directly and deserialize it into `C#` objects.
+
+The setup would be display as follows:
+<div style="text-align:center">
+    <img src="./assets/mesh_scale.png" height="400" />
+</div>
+
+The origin is placed at the centre of the mesh, where the bot start moving. The virtual size would be 20 * 20 for enough safe area. The flags will be evenly spaced at the circle with radius of 4. As discussed above the the scaling factor is 2 on homogenous scaling at non-relavent area, the real mesh dimension would be 10 * 10, the radius would be 2 in our case.
+
+The data format would be:
+```
+{
+   "verts":[
+      [5.0,5.0],
+      [5.0,-5.0],
+      [-5.0,-5.0],
+      [-5.0,5.0]
+   ],
+   "tInd":[
+      [0,1,3],
+      [1,2,3]
+   ]
+}
+```
+This example shows the real mesh with homogenous scaling. `"verts"` represents the mesh vertex in 2D space, and `"tInd"` stands for triangle index ([reference 1](gradientspace.com/tutorials/dmesh3) and [reference 2](http://gamma.cs.unc.edu/COMP770/LECTURES/11trimesh.pdf))
 ## Metrics
 The following variable are recorded by the test script:
 * Angle error `T_AD`: The absolute angle difference between the virual and the actual direction on each bot moving frame.
