@@ -32,10 +32,25 @@ It is stored in `JSON` format for simplicity, since we have the clone of the `py
 
 The setup would be display as follows:
 <div style="text-align:center">
-    <img src="./assets/mesh_scale.png" height="400" />
+    <img src="./assets/mesh_scale_1.png" height="400" />
 </div>
 
-The origin is placed at the centre of the mesh, where the bot start moving. The virtual size would be 20 * 20 for enough safe area. The flags will be evenly spaced at the circle with radius of 4. As discussed above the the scaling factor is 2 on homogenous scaling at non-relavent area, the real mesh dimension would be 10 * 10, the radius would be 2 in our case.
+The origin is placed at the centre of the mesh, where the bot start moving. The virtual size would be 6 * 6 for enough safe area. The flags will be evenly spaced at the circle with radius of 2 (Right Figure). As discussed above the the scaling factor is 2 on homogenous scaling at non-relavent area, the real mesh dimension would be 3 * 3, the radius would be 1 in our case (Left Figure).
+
+The radius is calculated by:
+<div style="text-align:center">
+    <img src="./assets/eq1.gif"/>
+</div>
+where <img src="https://latex.codecogs.com/gif.latex?R_i"/> is the radius of the outer circle and <img src="https://latex.codecogs.com/gif.latex?r_i"/> is the radius inner circle according to `NaviField`. We here assume that all scaling & relavent area should be in the outer circle, hence we could get <img src="https://latex.codecogs.com/gif.latex?R_i=0.76"/> as the figure above suggested.
+
+Hence we could have the list of coordinates as follows:
+<img src="https://latex.codecogs.com/gif.latex?A(1,\sqrt{3})"/>,
+<img src="https://latex.codecogs.com/gif.latex?B(2,0)"/>,
+<img src="https://latex.codecogs.com/gif.latex?C(1,-\sqrt{3})"/>,
+<img src="https://latex.codecogs.com/gif.latex?D(-1,-\sqrt{3})"/>,
+<img src="https://latex.codecogs.com/gif.latex?E(-2,0)"/>,
+<img src="https://latex.codecogs.com/gif.latex?F(-1,\sqrt{3})"/>,
+
 
 The data format would be:
 ```
