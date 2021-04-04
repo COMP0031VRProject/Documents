@@ -76,6 +76,30 @@ The following variable are recorded by the test script:
 * Real distance travelled `T_RD`: The distance bot travelled in the real world
 * Deviation `T_D`: Ratio between length of the virtual trajectory followed divided by the optimum path length (straight line)
 
+## Analytics
+* Scaling factor against real distance within relavent area: The scaling factor integrating across real distance
+    <div style="text-align:center">
+    <img src="https://latex.codecogs.com/gif.latex?\sum_{\Delta R}abs(\frac{||\Delta V||}{||\Delta R||} - 1) * ||\Delta R||"/>
+    </div>
+* Maximum absolute changing gradient of scaling factor(<img src="https://latex.codecogs.com/gif.latex?S"/>)
+    <div style="text-align:center">
+    <img src="https://latex.codecogs.com/gif.latex?\max(\frac{dS}{d||V||})"/>
+    </div>
+* Angle difference against real distance within relavent area: The
+angle difference integrating across real distance
+    <div style="text-align:center">
+    <img src="https://latex.codecogs.com/gif.latex?\sum_{\Delta R} \Theta * ||\Delta R||"/>
+    </div>
+* Angle difference against real distance for all distance: The
+angle difference integrating across real distance
+    <div style="text-align:center">
+    <img src="https://latex.codecogs.com/gif.latex?\sum_{\Delta R} \Theta * ||\Delta R||"/>
+    </div>
+* Maximum absolute changing gradient of angle difference(<img src="https://latex.codecogs.com/gif.latex?\Theta"/>)
+    <div style="text-align:center">
+    <img src="https://latex.codecogs.com/gif.latex?\max(\frac{d\Theta}{d||V||})"/>
+    </div>
+
 ## Acutal Implementation
 The task allocation can be devided into two parts: *Mesh Generation* and *Test Environment*
 * **Mathematica Team**:
